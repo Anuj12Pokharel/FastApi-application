@@ -1,0 +1,5 @@
+# Ignore environment file with secrets
+.env
+
+# Python cache
+__pycache__/

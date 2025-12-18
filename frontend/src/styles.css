@@ -1,0 +1,67 @@
+:root{
+  --bg: #f6f8fb;
+  --primary: #0b75d1;
+  --accent: #18a0c6;
+  --bubble-user: #0b67b2;
+  --bubble-bot: #2bb4c9;
+}
+
+body{font-family: Inter, Arial, sans-serif;background:var(--bg);margin:0;min-height:100vh}
+.page{min-height:100vh;position:relative}
+
+/* Centered uploader card */
+.uploader-center{display:flex;align-items:center;justify-content:center;min-height:100vh;padding:24px}
+.uploader-card{width:420px;background:#fff;padding:20px;border-radius:12px;box-shadow:0 6px 20px rgba(13,38,76,0.08);text-align:left}
+.uploader-card h3{margin-top:0}
+
+/* Compact chat widget pinned bottom-right */
+.chat-widget{position:fixed;right:20px;bottom:20px;width:360px;height:520px;background:#fff;border-radius:12px;box-shadow:0 10px 30px rgba(15,30,60,0.12);display:flex;flex-direction:column;overflow:hidden;z-index:1000}
+.chat-header{padding:10px 14px;background:linear-gradient(90deg,var(--primary),var(--accent));color:#fff;font-weight:600}
+.chat-messages{padding:12px;overflow:auto;flex:1;background:linear-gradient(180deg,#fbfdff,#f7fbff)}
+.bubble{display:block;padding:8px 12px;border-radius:14px;margin:8px 0;max-width:78%}
+.bubble.user{background:var(--bubble-user);color:#fff;align-self:flex-end;margin-left:auto}
+.bubble.bot{background:var(--bubble-bot);color:#fff;align-self:flex-start}
+.bubble.source{background:#f3f7fb;color:#222;align-self:flex-start;border:1px solid #e0e6ef;font-size:13px;padding:10px;border-radius:8px;max-width:100%}
+.chat-input{display:flex;padding:10px;border-top:1px solid #eee;background:#fff}
+.chat-input input{flex:1;padding:8px 10px;border-radius:18px;border:1px solid #ccc;margin-right:8px}
+.chat-input button{background:var(--primary);color:#fff;border:none;padding:8px 12px;border-radius:10px}
+.status{margin-top:12px;color:#333}
+
+.source{margin:6px 0;padding:6px}
+.source-header{font-size:11px;color:#666;margin-bottom:6px}
+.source-body{font-size:13px;color:#333;background:#fff;padding:8px;border-radius:6px;border:1px solid #eee}
+.error{color:#8b0000;padding:8px}
+
+/* Responsive tweak */
+@media (max-width:480px){
+  .chat-widget{right:10px;left:10px;width:auto;bottom:10px;height:420px}
+  .uploader-card{width:92%}
+}
+
+/* Dropzone styles */
+.dropzone{position:relative;border-radius:10px;padding:22px;border:2px dashed rgba(11,117,209,0.18);background:linear-gradient(135deg, rgba(11,117,209,0.03), rgba(24,160,198,0.02));cursor:pointer;transition:all .25s ease}
+.dropzone.active{box-shadow:0 10px 30px rgba(11,117,209,0.12);transform:translateY(-4px);border-color:rgba(24,160,198,0.6)}
+.dropzone .file-input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.drop-content{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:10px}
+.drop-title{font-weight:700;color:#0b63a9}
+.drop-sub{font-size:13px;color:#4b6b86}
+.file-info{font-size:12px;color:#2b475f;margin-top:8px}
+
+/* colorful animated accent */
+.dropzone::before{content:'';position:absolute;inset:-2px;border-radius:12px;background:linear-gradient(90deg,#1fb6ff33,#7b61ff22,#ff6b6b22);z-index:-1;filter:blur(12px);opacity:0;transition:opacity .25s}
+.dropzone.active::before{opacity:1}
+
+.primary{background:linear-gradient(90deg,var(--primary),var(--accent));color:white;border:none;padding:8px 14px;border-radius:10px}
+
+.progress-wrap{height:8px;background:#eef6ff;border-radius:8px;margin-top:10px;overflow:hidden}
+.progress-bar{height:100%;background:linear-gradient(90deg,#00c6ff,#0072ff);width:0;transition:width .28s ease}
+
+.preview{margin-top:12px;border-radius:8px;padding:10px;background:linear-gradient(180deg,#ffffff,#fbfcff);border:1px solid #eef4ff}
+.preview-title{font-size:12px;color:#556676;margin-bottom:6px}
+.preview-body{max-height:160px;overflow:auto;background:transparent;border-radius:6px;padding:8px;font-size:13px}
+
+.bubble.source{background:#f3f7fb;color:#222;align-self:flex-start;border:1px solid #e0e6ef;font-size:13px;padding:10px;border-radius:8px;max-width:100%}
+.source{margin:8px 0;padding:6px}
+.source-header{font-size:11px;color:#666;margin-bottom:6px}
+.source-body{font-size:13px;color:#333;background:#fff;padding:8px;border-radius:6px;border:1px solid #eee}
+.error{color:#8b0000;padding:8px}
